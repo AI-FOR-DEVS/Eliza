@@ -2,7 +2,7 @@ import random
 import re
 
 responses = {
-    "i feel (.*)": ["Why do you feel }?", "How long have you been feeling {}?"],
+    "i feel (.*)": ["Why do you feel {}?", "How long have you been feeling {}?"],
     "i am (.*)": ["Why do you say you're {}?", "How long have you been {}?"],
     "i'm (.*)": ["Why are you {}?", "How long have you been {}?"],
     "i (.*) you": ["Why do you {} me?", "What makes you think you {} me?"]
@@ -22,7 +22,8 @@ while input_text:
             print("Eliza:", response)
             matched = True
             break
-        else:
-          print("Eliza: Can you explain the problem to me more closely?")
+    
+    if not matched:
+        print("Eliza: Can you explain the problem to me more closely?")
 
     input_text = input('You: ')
